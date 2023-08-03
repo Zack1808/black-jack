@@ -1,0 +1,13 @@
+/* Importing the font */
+@import url("https://fonts.googleapis.com/css2?family=Arbutus+Slab&display=swap");
+
+/* Loading the defaults */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arbutus Slab", serif;
+  outline: 1px solid lime !important;
+}
