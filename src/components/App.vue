@@ -6,6 +6,8 @@
     </div>
     <div class="buttons">
       <ButtonComponent v-if="!gameActive" @click="startGame" text="Play" />
+      <ButtonComponent v-if="gameActive" @click="startGame" text="Hit" />
+      <ButtonComponent v-if="gameActive" @click="startGame" text="Stand" />
     </div>
     <div class="player-cards"></div>
   </div>
@@ -26,9 +28,6 @@ export default {
   },
   methods: {
     ...mapActions(["startGame"]),
-    start: () => {
-      console.log("start");
-    },
   },
   computed: {
     ...mapGetters(["gameActive"]),

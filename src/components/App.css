@@ -38,6 +38,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 10px;
   aspect-ratio: 13.5 / 9;
   border: 1px solid #000;
 }
