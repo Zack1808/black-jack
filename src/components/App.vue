@@ -2,10 +2,10 @@
 <template>
   <div class="app-container">
     <div class="ai-cards">
-      <h1 id="title">BlackJack</h1>
+      <h1 id="title" v-if="!gameActive">BlackJack</h1>
     </div>
     <div class="buttons">
-      <ButtonComponent @click="start" text="Play" />
+      <ButtonComponent v-if="!gameActive" @click="startGame" text="Play" />
     </div>
     <div class="player-cards"></div>
   </div>
@@ -13,6 +13,8 @@
 
 <!-- Implementing JS -->
 <script>
+import { mapActions, mapGetters } from "vuex";
+
 // Importing the costume components
 import ButtonComponent from "./ButtonComponent/ButtonComponent.vue";
 
@@ -23,9 +25,13 @@ export default {
     ButtonComponent,
   },
   methods: {
+    ...mapActions(["startGame"]),
     start: () => {
       console.log("start");
     },
+  },
+  computed: {
+    ...mapGetters(["gameActive"]),
   },
 };
 </script>
