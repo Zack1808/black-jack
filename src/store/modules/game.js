@@ -66,7 +66,7 @@ const mutations = {
         cardList.push({ id: `${i}${j}`, image: colors[i], icon: cards[j] });
       }
     }
-    state.cardList = cardList;
+    state.cardList = cardList.sort(() => Math.random() - 0.5);
   },
 };
 
