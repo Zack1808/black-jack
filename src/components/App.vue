@@ -1,7 +1,13 @@
 <!-- Creating the App component -->
 <template>
   <div class="app-container">
-    <ButtonComponent text="Click me" />
+    <div class="ai-cards">
+      <h1 id="title">BlackJack</h1>
+    </div>
+    <div class="buttons">
+      <ButtonComponent @click="start" text="Play" />
+    </div>
+    <div class="player-cards"></div>
   </div>
 </template>
 
@@ -15,6 +21,11 @@ export default {
   name: "App",
   components: {
     ButtonComponent,
+  },
+  methods: {
+    start: () => {
+      console.log("start");
+    },
   },
 };
 </script>

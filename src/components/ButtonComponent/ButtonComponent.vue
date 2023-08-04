@@ -1,6 +1,6 @@
 <!-- Creating the button component -->
 <template>
-  <button @click="handleClick">{{ text }}</button>
+  <button>{{ text }}</button>
 </template>
 
 <!-- Implementing JS -->
@@ -10,11 +10,6 @@ export default {
   name: "ButtonComponent",
   props: {
     text: String,
-  },
-  methods: {
-    handleClick: () => {
-      console.log("clicked");
-    },
   },
 };
 </script>

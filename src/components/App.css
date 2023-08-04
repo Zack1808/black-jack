@@ -1,6 +1,11 @@
 /* Importing the font */
 @import url("https://fonts.googleapis.com/css2?family=Arbutus+Slab&display=swap");
 
+/* Defining the css variables */
+:root {
+  --width: 200px;
+}
+
 /* Loading the defaults */
 *,
 *::before,
@@ -9,5 +14,40 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Arbutus Slab", serif;
+  user-select: none;
   /* outline: 1px solid lime !important; */
+}
+
+.app-container {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h1 {
+  padding: 1em 0;
+  font-size: clamp(2rem, 10vw, 4rem);
+}
+
+.buttons {
+  height: var(--width);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 13.5 / 9;
+  border: 1px solid #000;
+}
+
+.buttons::before {
+  content: "";
+  position: absolute;
+  width: var(--width);
+  aspect-ratio: 9 / 13.5;
+  background-image: url("../images/backside.png");
+  background-size: contain;
+  rotate: 90deg;
 }
