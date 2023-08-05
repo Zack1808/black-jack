@@ -1,6 +1,6 @@
 <!-- Creating the card component -->
 <template>
-  <div class="card">
+  <div class="card" :style="{ width: cardWith }">
     <div class="card-element" :class="{ hide: hideElement }">
       <div class="top">
         <span>{{ icon }}</span>
@@ -27,9 +27,15 @@ export default {
   name: "PlayCard",
   props: ["icon", "color", "reveal"],
   computed: {
-    ...mapGetters(["getRevealCard"]),
+    ...mapGetters(["getRevealCard", "getPlayerCards", "getAiCards"]),
     hideElement() {
       return this.reveal === "ai" && !this.getRevealCard;
+    },
+    cardWith() {
+      if (this.reveal === "ai") {
+        return 200 - 50 * (this.getAiCards.length - 2) + "px";
+      }
+      return 200 - 50 * (this.getPlayerCards.length - 2) + "px";
     },
   },
 };
@@ -40,6 +46,6 @@ export default {
 /* Importing the style file */
 @import url("./PlayCard.css");
 .cards {
-  --width: width;
+  --width: 200px;
 }
 </style>
