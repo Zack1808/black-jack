@@ -29,6 +29,11 @@
   overflow: hidden;
 }
 
+.game-buttons {
+  display: flex;
+  gap: 10px;
+}
+
 .player-cards,
 .ai-cards {
   display: flex;

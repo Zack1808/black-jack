@@ -6,8 +6,23 @@ const state = {
   // State that will contain the list of all cards
   cardList: [],
 
-  // State that will containe the list of the players cards
+  // State that will contain the list of the players cards
   playerCards: [],
+
+  // State that will tell if the player stepped over 21
+  canPlayerPlay: false,
+
+  // State that will get the players current result
+  playersResult: 0,
+
+  // State that contains the AI cards
+  aiCards: [],
+
+  // State that will tell if the player stepped over 21
+  canAiPlay: false,
+
+  // State that will get the ai current result
+  aiResult: 0,
 };
 
 // Exporting the state

@@ -4,16 +4,20 @@
     <h1 id="title" v-if="!gameActive">BlackJack</h1>
     <div class="ai-cards" v-else>
       <PlayCard
-        v-for="card in getPlayerCards"
+        v-for="card in getAiCards"
         :key="card.id"
         :color="card.image"
         :icon="card.icon"
       />
+      {{ console.log(getCanPlayerPlay) }}
     </div>
     <div class="buttons">
       <ButtonComponent v-if="!gameActive" @click="startGame" text="Play" />
-      <ButtonComponent v-if="gameActive" @click="startGame" text="Hit" />
-      <ButtonComponent v-if="gameActive" @click="startGame" text="Stand" />
+      <div class="game-buttons" v-else-if="gameActive && getCanPlayerPlay">
+        <ButtonComponent @click="addCard" text="Hit" />
+        <ButtonComponent @click="stand" text="Stand" />
+      </div>
+      <ButtonComponent v-else text="See result" />
     </div>
     <div class="player-cards">
       <PlayCard
@@ -42,10 +46,15 @@ export default {
     PlayCard,
   },
   methods: {
-    ...mapActions(["startGame"]),
+    ...mapActions(["startGame", "addCard", "stand"]),
   },
   computed: {
-    ...mapGetters(["gameActive", "getPlayerCards"]),
+    ...mapGetters([
+      "gameActive",
+      "getPlayerCards",
+      "getAiCards",
+      "getCanPlayerPlay",
+    ]),
   },
 };
 </script>

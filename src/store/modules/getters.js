@@ -8,6 +8,12 @@ const getters = {
 
   // Returns the players cards
   getPlayerCards: (state) => state.playerCards,
+
+  // Getting the players total
+  getCanPlayerPlay: (state) => state.canPlayerPlay,
+
+  // Returns the AI cards
+  getAiCards: (state) => state.aiCards,
 };
 
 // exporting the getters

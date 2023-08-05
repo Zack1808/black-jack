@@ -30,4 +30,7 @@ export default {
 <style scoped>
 /* Importing the style file */
 @import url("./PlayCard.css");
+.cards {
+  --width: width;
+}
 </style>
