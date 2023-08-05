@@ -9,7 +9,9 @@
       <ButtonComponent v-if="gameActive" @click="startGame" text="Hit" />
       <ButtonComponent v-if="gameActive" @click="startGame" text="Stand" />
     </div>
-    <div class="player-cards"></div>
+    <div class="player-cards">
+      <div v-for="card in getPlayerCards" :key="card.id"></div>
+    </div>
   </div>
 </template>
 
@@ -30,7 +32,7 @@ export default {
     ...mapActions(["startGame"]),
   },
   computed: {
-    ...mapGetters(["gameActive"]),
+    ...mapGetters(["gameActive", "getPlayerCards"]),
   },
 };
 </script>

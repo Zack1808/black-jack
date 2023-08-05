@@ -1,39 +1,8 @@
+// Importing the images
 import diamond from "../../images/diamond.svg";
 import club from "../../images/club.svg";
 import heart from "../../images/heart.svg";
 import spade from "../../images/spade.svg";
-
-// Creating the state object for the game
-const state = {
-  // State that will tell if the game is being played
-  gameStatus: false,
-
-  // State that will contain the list of all cards
-  cardList: [],
-};
-
-// Creating the getters object for the game
-const getters = {
-  // Returns the game state
-  gameActive: (state) => state.gameStatus,
-
-  // Returns the amount of cards left
-  getCardAmount: (state) => state.cardList.length,
-};
-
-// Creating the actions object for the game
-const actions = {
-  // Action that will start the game
-  startGame: ({ commit }) => {
-    commit("changeGameState", true);
-    commit("createDeck");
-  },
-
-  // Action that will end the game
-  endGame: ({ commit }) => {
-    commit("changeGameState", false);
-  },
-};
 
 // Creating the mutations object for the game
 const mutations = {
@@ -68,11 +37,12 @@ const mutations = {
     }
     state.cardList = cardList.sort(() => Math.random() - 0.5);
   },
+
+  // Adds a card to the players hand
+  givePlayerCard: (state) => {
+    state.playerCards.push(state.cardList.pop());
+  },
 };
 
-export default {
-  state,
-  getters,
-  actions,
-  mutations,
-};
+// Exporting the mutations
+export default mutations;
