@@ -11,6 +11,7 @@ const actions = {
     commit("giveCard", rootState.game.aiCards);
     commit("checkIfPlayerCanPlay", "player");
     commit("checkIfPlayerCanPlay", "ai");
+    console.log(rootState.game.revealCards);
   },
 
   // Action that will add a card

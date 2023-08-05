@@ -1,7 +1,7 @@
 <!-- Creating the card component -->
 <template>
   <div class="card">
-    <div class="card-element">
+    <div class="card-element" :class="{ hide: hideElement }">
       <div class="top">
         <span>{{ icon }}</span>
         <img :src="color" alt="" />
@@ -19,10 +19,19 @@
 
 <!-- Implementing JS -->
 <script>
+// Importing vuex helpers
+import { mapGetters } from "vuex";
+
 // Exporting the Card component
 export default {
   name: "PlayCard",
-  props: ["icon", "color"],
+  props: ["icon", "color", "reveal"],
+  computed: {
+    ...mapGetters(["getRevealCard"]),
+    hideElement() {
+      return this.reveal === "ai" && !this.getRevealCard;
+    },
+  },
 };
 </script>
 

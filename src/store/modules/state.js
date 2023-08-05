@@ -23,6 +23,9 @@ const state = {
 
   // State that will get the ai current result
   aiResult: 0,
+
+  // State that will determine if the AI shows its cards or not
+  revealCards: false,
 };
 
 // Exporting the state

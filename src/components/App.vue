@@ -8,8 +8,8 @@
         :key="card.id"
         :color="card.image"
         :icon="card.icon"
+        reveal="ai"
       />
-      {{ console.log(getCanPlayerPlay) }}
     </div>
     <div class="buttons">
       <ButtonComponent v-if="!gameActive" @click="startGame" text="Play" />
@@ -25,6 +25,7 @@
         :key="card.id"
         :color="card.image"
         :icon="card.icon"
+        reveal="player"
       />
     </div>
   </div>

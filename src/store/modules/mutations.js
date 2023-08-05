@@ -85,13 +85,22 @@ const mutations = {
       state.aiResult = result;
     } else {
       state.canPlayerPlay = result < 21;
+      if (result >= 21) {
+        state.revealCards = true;
+      }
       state.playersResult = result;
     }
   },
 
   // Function that will set the player to a non-playing mode
-  stopPlaying: (state, player) =>
-    player === "ai" ? (state.canAiPlay = false) : (state.canPlayerPlay = false),
+  stopPlaying: (state, player) => {
+    if (player === "ai") {
+      state.canAiPlay = false;
+    } else {
+      state.canPlayerPlay = false;
+      state.revealCards = true;
+    }
+  },
 
   // Adds a card to the players hand
   giveCard: (state, player) => {

@@ -14,6 +14,9 @@ const getters = {
 
   // Returns the AI cards
   getAiCards: (state) => state.aiCards,
+
+  // Returns if the AI cards should be revealed
+  getRevealCard: (state) => state.revealCards,
 };
 
 // exporting the getters

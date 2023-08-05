@@ -15,6 +15,15 @@
   border: 1px solid #000;
   border-radius: 10px;
   font-size: 1.3rem;
+  position: relative;
+}
+
+.card-element.hide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../../images/backside.png");
+  background-size: contain;
 }
 
 .top,
