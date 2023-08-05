@@ -50,6 +50,7 @@ const actions = {
   endGame: ({ commit }) => {
     commit("clearHands");
     commit("changeGameState", false);
+    commit("revealModal");
   },
 };
 

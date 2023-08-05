@@ -5,7 +5,7 @@
       <h2>{{ text }}</h2>
       <div class="button">
         <ButtonComponent @click="startGame" text="Play again" />
-        <ButtonComponent text="Quit" />
+        <ButtonComponent @click="endGame" text="Quit" />
       </div>
     </div>
   </div>
@@ -26,7 +26,7 @@ export default {
     ButtonComponent,
   },
   methods: {
-    ...mapActions(["startGame"]),
+    ...mapActions(["startGame", "endGame"]),
   },
   props: {
     text: String,
