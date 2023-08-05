@@ -70,3 +70,9 @@ h1 {
   background-size: contain;
   rotate: 90deg;
 }
+
+@media (width < 650px) {
+  :root {
+    --width: 130px;
+  }
+}
