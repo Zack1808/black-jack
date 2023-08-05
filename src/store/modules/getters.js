@@ -17,6 +17,20 @@ const getters = {
 
   // Returns if the AI cards should be revealed
   getRevealCard: (state) => state.revealCards,
+
+  // Return if the modal should be shown
+  getShowModal: (state) => state.showModal,
+
+  // Rerturn the message about if the player won or not
+  getMessage: (state) => {
+    if (
+      state.playersResult === 21 ||
+      (state.playersResult < 21 && state.playersResult > state.aiResult) ||
+      (state.playersResult < 21 && state.aiResult > 21)
+    )
+      return "You Win";
+    return "You Lose";
+  },
 };
 
 // exporting the getters

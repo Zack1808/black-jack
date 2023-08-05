@@ -9,6 +9,7 @@ const mutations = {
   // Mutates the game status state
   changeGameState: (state, status) => {
     state.gameStatus = status;
+    state.revealCards = false;
   },
 
   // Clears the hands of both user and the AI
@@ -100,6 +101,11 @@ const mutations = {
       state.canPlayerPlay = false;
       state.revealCards = true;
     }
+  },
+
+  // Function that will display or hide the modal
+  revealModal: (state) => {
+    state.showModal = !state.showModal;
   },
 
   // Adds a card to the players hand

@@ -3,6 +3,7 @@ const actions = {
   // Action that will start the game
   startGame: ({ commit, rootState }) => {
     commit("changeGameState", true);
+    if (rootState.game.showModal) commit("revealModal");
     commit("clearHands");
     commit("createDeck");
     commit("giveCard", rootState.game.playerCards);
@@ -39,6 +40,10 @@ const actions = {
         commit("checkIfPlayerCanPlay", "ai");
       }
     }
+  },
+
+  displayVictory: ({ commit }) => {
+    commit("revealModal");
   },
 
   // Action that will end the game

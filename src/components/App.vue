@@ -17,7 +17,7 @@
         <ButtonComponent @click="addCard" text="Hit" />
         <ButtonComponent @click="stand" text="Stand" />
       </div>
-      <ButtonComponent v-else text="See result" />
+      <ButtonComponent v-else @click="displayVictory" text="See result" />
     </div>
     <div class="player-cards">
       <PlayCard
@@ -28,6 +28,7 @@
         reveal="player"
       />
     </div>
+    <ModalComponent v-if="getShowModal" :text="getMessage" />
   </div>
 </template>
 
@@ -38,6 +39,7 @@ import { mapActions, mapGetters } from "vuex";
 // Importing the costume components
 import ButtonComponent from "./ButtonComponent/ButtonComponent.vue";
 import PlayCard from "./PlayCard/PlayCard";
+import ModalComponent from "./ModalComponent/ModalComponent.vue";
 
 // Exporting the App component
 export default {
@@ -45,9 +47,10 @@ export default {
   components: {
     ButtonComponent,
     PlayCard,
+    ModalComponent,
   },
   methods: {
-    ...mapActions(["startGame", "addCard", "stand"]),
+    ...mapActions(["startGame", "addCard", "stand", "displayVictory"]),
   },
   computed: {
     ...mapGetters([
@@ -55,6 +58,8 @@ export default {
       "getPlayerCards",
       "getAiCards",
       "getCanPlayerPlay",
+      "getShowModal",
+      "getMessage",
     ]),
   },
 };

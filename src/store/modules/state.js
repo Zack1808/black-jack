@@ -26,6 +26,9 @@ const state = {
 
   // State that will determine if the AI shows its cards or not
   revealCards: false,
+
+  // State that will determine if the modal shows
+  showModal: false,
 };
 
 // Exporting the state
