@@ -1,0 +1,44 @@
+.card {
+  width: var(--width);
+  position: relative;
+}
+
+.card-element {
+  background-color: #fff;
+  width: var(--width);
+  aspect-ratio: 9 / 13.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em;
+  border: 1px solid #000;
+  border-radius: 10px;
+  font-size: 1.3rem;
+}
+
+.top,
+.bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.top {
+  align-self: flex-start;
+}
+
+.bottom {
+  rotate: 0.5turn;
+  align-self: flex-end;
+}
+
+.top img,
+.bottom img {
+  width: 25px;
+}
+
+.middle {
+  width: 50%;
+}

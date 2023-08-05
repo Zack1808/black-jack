@@ -26,6 +26,19 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  overflow: hidden;
+}
+
+.player-cards,
+.ai-cards {
+  display: flex;
+  transform: translateY(70px);
+  justify-content: center;
+  align-items: center;
+}
+
+.ai-cards {
+  rotate: 0.5turn;
 }
 
 h1 {
